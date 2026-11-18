@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>شاپ ShadowVoxel | بازار محصولات ماینکرفت</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#090b12;--panel:#141927;--line:#293044;--muted:#9aa3b7;--text:#f4f6fb;--violet:#8b5cf6;--cyan:#32d6c5}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#21143b 0,transparent 35%),var(--bg);color:var(--text);font-family:Vazirmatn,Arial,sans-serif}
+header{height:76px;border-bottom:1px solid #ffffff18;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:#090b12eF;position:sticky;top:0;z-index:2}
+.brand{font-weight:900;font-size:21px;direction:ltr}.brand span{color:var(--cyan)}nav{display:flex;gap:25px}a{color:inherit;text-decoration:none}
+button,.btn{border:0;border-radius:10px;padding:13px 21px;color:white;background:linear-gradient(110deg,#7545e8,#3c9fbd);font:inherit;font-weight:700;cursor:pointer}
+.ghost{background:#171c2a;border:1px solid var(--line)}main{max-width:1500px;margin:auto}
+.hero{padding:125px 7vw 115px;min-height:560px;position:relative;overflow:hidden}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:2px;font-weight:800;direction:ltr}
+h1{font-size:clamp(48px,6.5vw,88px);line-height:1.3;margin:18px 0}h1 span{color:#a78bfa}.hero-points{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:#c1c8d8;font-size:13px}.hero-points span{background:#ffffff08;border:1px solid #ffffff12;padding:9px 13px;border-radius:30px}.hero p{color:var(--muted);max-width:550px;line-height:2}.glow{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,#7445e855,transparent 68%);left:5%;top:30px;pointer-events:none}
+section.market{padding:75px 6vw}.market-tools{display:flex;gap:12px;margin:28px 0 14px}.search-wrap{display:flex;align-items:center;gap:10px;flex:1;background:#101522;border:1px solid var(--line);border-radius:12px;padding:0 16px}.search-wrap span{font-size:25px;color:var(--cyan)}.search-wrap input{width:100%;background:transparent;border:0;outline:0;color:var(--text);font:inherit;padding:14px 0}.market-tools select{background:#101522;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:0 15px;font:inherit}.filters{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0}.filter{background:#151b2a;border:1px solid var(--line);color:#cbd1df;padding:9px 16px;border-radius:30px;font-size:13px}.filter.active{background:#7545e82b;border-color:#8b5cf6;color:#d9ccff}.result-line{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin:20px 2px}.empty-state{grid-column:1/-1;text-align:center;padding:65px 20px;border:1px dashed #39435b;border-radius:18px;background:#111725}.empty-state .symbol{font-size:42px;margin-bottom:12px}.empty-state h3{margin:8px}.empty-state p{color:var(--muted);line-height:2}.card{transition:transform .2s,border-color .2s,box-shadow .2s}.card:hover{transform:translateY(-5px);border-color:#7656bd;box-shadow:0 18px 45px #0005}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}h2{font-size:36px;margin:10px 0}.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:24px}.card{background:linear-gradient(145deg,#171c2b,#10131d);border:1px solid var(--line);border-radius:18px;padding:26px;min-height:275px;display:flex;flex-direction:column}
+.tag{font-size:11px;color:var(--cyan);background:#32d6c514;padding:5px 9px;border-radius:30px;align-self:flex-start}.card h3{margin:15px 0 7px}.card p{color:var(--muted);font-size:15px;line-height:2;flex:1}.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:15px}.price{font-weight:800;color:#c4b5fd}
+.sell{margin:50px 6vw 95px;padding:42px;border:1px solid #49377a;border-radius:18px;background:linear-gradient(110deg,#231b3c,#111a26);display:flex;align-items:center;justify-content:space-between;gap:20px}.sell p{color:var(--muted);line-height:1.9}
+header .header-actions{display:flex;align-items:center;gap:14px}.help-link{font-size:13px;color:#c4b5fd;border:1px solid #6d4bb3;padding:9px 13px;border-radius:10px}.guide{padding:70px 6vw;display:grid;grid-template-columns:.85fr 1.15fr;gap:42px;align-items:center;background:linear-gradient(120deg,#121629,#0c101b);border-top:1px solid #ffffff0d;border-bottom:1px solid #ffffff0d}.guide-intro h2{font-size:clamp(28px,3vw,42px);line-height:1.6}.guide-intro p{color:var(--muted);line-height:2}.guide-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.guide-tags span{font-size:11px;color:#c4b5fd;background:#8b5cf61b;border:1px solid #8b5cf633;padding:7px 11px;border-radius:20px}.chat-panel{background:#111725;border:1px solid #303a52;border-radius:20px;overflow:hidden;box-shadow:0 20px 65px #0005}.chat-top{display:flex;align-items:center;gap:12px;padding:17px 20px;border-bottom:1px solid var(--line);background:#171e2e}.bot-avatar{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#7545e8,#32aebc);font-size:22px}.chat-top small{display:block;color:#a6b1c7;font-size:11px;margin-top:4px}.chat-top small i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#48d69b;margin-left:5px}.demo-label{margin-right:auto;font-size:10px;color:#c4b5fd;background:#8b5cf61b;padding:6px 9px;border-radius:20px}.chat-messages{height:260px;overflow:auto;padding:20px;display:flex;flex-direction:column;gap:12px}.bubble{max-width:88%;padding:12px 15px;border-radius:15px;line-height:1.9;font-size:13px}.bubble.bot{background:#202a3d;border:1px solid #34415b;align-self:flex-start;border-top-right-radius:4px}.bubble.user{background:#6542bd;align-self:flex-end;border-top-left-radius:4px}.quick-asks{display:flex;gap:7px;flex-wrap:wrap;padding:0 17px 14px}.quick-asks button{background:#1b2334;border:1px solid #35415a;color:#cbd5e1;padding:7px 10px;font-size:10px;border-radius:20px}.chat-compose{display:flex;gap:9px;padding:14px 16px;border-top:1px solid var(--line)}.chat-compose input{flex:1;min-width:0;background:#0b101b;border:1px solid #35415a;border-radius:10px;padding:12px;color:white;font:inherit;outline:none}.chat-compose button{padding:10px 17px}.auth-tabs{display:flex;gap:8px;margin:14px 0 18px}.auth-tab{flex:1;padding:10px;border:1px solid var(--line);border-radius:9px;background:#141b2a;color:var(--muted)}.auth-tab.active{border-color:#8b5cf6;background:#7545e82b;color:#e2d7ff}.chat-disclaimer{margin:0;padding:0 17px 15px;color:#8290a8;font-size:10px;line-height:1.8}footer{border-top:1px solid var(--line);padding:32px 6vw;color:#a78bfa;display:flex;justify-content:space-between}
+.modal{position:fixed;inset:0;background:#000b;display:grid;place-items:center;z-index:5;padding:18px}.hidden{display:none}.dialog{width:min(480px,100%);max-height:90vh;overflow:auto;background:#141927;border:1px solid var(--line);border-radius:18px;padding:27px;position:relative}.close{position:absolute;left:14px;top:8px;background:none;font-size:25px;padding:0}.dialog input,.dialog textarea,.dialog select{width:100%;padding:12px;margin:7px 0 13px;border:1px solid var(--line);border-radius:9px;background:#0b0f19;color:white;font:inherit}.dialog label{font-size:13px;color:#cbd1df}.dialog .submit{width:100%;margin-top:8px}.note{font-size:12px;color:var(--muted);line-height:1.8}.switch{color:var(--cyan);cursor:pointer;font-size:13px}#toast{position:fixed;bottom:20px;left:20px;background:#20283a;padding:12px 18px;border-radius:10px;display:none;z-index:9}
+@media(max-width:800px){.guide{grid-template-columns:1fr;gap:20px}}@media(max-width:650px){header{padding:0 4vw}.header-actions{gap:7px!important}.help-link{font-size:11px;padding:8px}.brand{font-size:17px}nav{display:none}.hero{padding:75px 7vw}.sell{margin:20px 5vw 50px;display:block}.sell button{margin-top:12px}footer{display:block;line-height:2}.market-tools{flex-direction:column}.market-tools select{min-height:48px}.grid{grid-template-columns:1fr}.card{min-height:250px}h2{font-size:29px}.head{display:block}.head>.muted{display:block;margin-top:10px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="#">SHADOW<span>VOXEL</span></a><nav><a href="#market">بازار</a><a href="#guide">راهنمای هوشمند</a><a href="#sell">فروشنده شو</a></nav><div class="header-actions"><a class="help-link" href="#guide">✦ راهنمای خریداران</a><div id="account"><button class="ghost" onclick="auth()">ورود / ثبت‌نام</button></div></div></header>
+<main>
+<section class="hero"><div class="glow"></div><div class="eyebrow">بازار محصولات ماینکرفت</div><h1>دنیای ماینکرفتت رو<br><span>متفاوت بساز.</span></h1><p>پک‌ها، مدل‌ها و پلاگین‌های ماینکرفت رو کشف کن یا ساخته‌های خودت رو در ShadowVoxel عرضه کن.</p><a class="btn" href="#market">دیدن محصولات</a><div class="hero-points"><span>✦ محصولات متنوع</span><span>◈ قیمت‌گذاری به تومان</span><span>⌁ مناسب سازندگان ماینکرفت</span></div></section>
+<section class="guide" id="guide">
+<div class="guide-intro"><div class="eyebrow">SHADOWVOXEL SMART GUIDE</div><h2>برای انتخاب محصول مطمئن نیستی؟</h2><p>از راهنمای شاپ بپرس تا کمکت کند محصول مناسب نسخه ماینکرفت و نیازت را پیدا کنی.</p><div class="guide-tags"><span>راهنمای انتخاب</span><span>سازگاری نسخه‌ها</span><span>نصب و راه‌اندازی</span></div></div>
+<div class="chat-panel">
+<div class="chat-top"><div class="bot-avatar">✦</div><div><b>دستیار ShadowVoxel</b><small><i></i> آماده راهنمایی</small></div><span class="demo-label">نسخه آزمایشی</span></div>
+<div class="chat-messages" id="chatMessages" aria-live="polite"><div class="bubble bot">سلام! من راهنمای شاپ ShadowVoxel هستم. 😊<br>برای اینکه محصول مناسبی انتخاب کنی، بگو دنبال چه چیزی هستی؟ مثلاً ریسورس‌پک، پلاگین سرور یا راهنمای نصب.</div></div>
+<div class="quick-asks"><button onclick="quickAsk('برای سرورم چه پلاگینی انتخاب کنم؟')">پیشنهاد پلاگین</button><button onclick="quickAsk('چطور سازگاری محصول با نسخه ماینکرفت را بررسی کنم؟')">بررسی سازگاری</button><button onclick="quickAsk('برای نصب محصول از کجا شروع کنم؟')">راهنمای نصب</button></div>
+<form class="chat-compose" id="chatForm"><input id="chatInput" placeholder="سؤالت رو اینجا بنویس..." autocomplete="off" aria-label="پیام به دستیار"><button type="submit">ارسال ↗</button></form>
+<p class="chat-disclaimer">این نسخه، پاسخ‌گوی آزمایشی داخل مرورگر است و هنوز به مدل هوش مصنوعی آنلاین متصل نیست. پیش از خرید، توضیحات و سازگاری محصول را بررسی کن.</p>
+</div>
+</section>
+<section class="market" id="market"><div class="head"><div><div class="eyebrow">فروشگاه شادو وکسل</div><h2>محصولات فروشگاه</h2></div><span class="muted">پک‌ها و پلاگین‌های ماینکرفت</span></div><div class="market-tools">
+<div class="search-wrap"><span>⌕</span><input id="search" aria-label="جست‌وجوی محصولات" type="search" placeholder="جست‌وجوی محصول، پلاگین یا سازنده..." oninput="draw()"></div>
+<select id="sort" aria-label="مرتب‌سازی محصولات" onchange="draw()"><option value="new">جدیدترین</option><option value="low">ارزان‌ترین</option><option value="high">گران‌ترین</option><option value="name">نام محصول</option></select>
+</div>
+<div class="filters"><button class="filter active" data-kind="همه" onclick="setFilter('همه')">همه محصولات</button><button class="filter" data-kind="Resource Pack" onclick="setFilter('Resource Pack')">ریسورس‌پک</button><button class="filter" data-kind="Plugin" onclick="setFilter('Plugin')">پلاگین</button></div>
+<div class="result-line"><span id="resultCount">۰ محصول</span><span>قیمت‌ها به تومان</span></div>
+<div class="grid" id="products"></div></section>
+<section class="sell" id="sell"><div><div class="eyebrow">به جمع سازندگان بپیوند</div><h2>محصولی برای فروش داری؟</h2><p>پک یا پلاگینت رو ثبت کن، قیمت تومان تعیین کن و در فروشگاه نمایش بده.</p></div><button onclick="sellForm()">ثبت محصول</button></section>
+</main>
+<footer><b>SHADOWVOXEL SHOP</b><span class="muted">بازار فارسی پک‌ها و پلاگین‌های ماینکرفت</span></footer>
+<div class="modal hidden" id="modal"><div class="dialog"><button class="close" onclick="closeModal()">×</button><div id="content"></div></div></div><div id="toast"></div>
+<script>
+let user=null, products=[];
+const $=s=>document.querySelector(s);
+function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(t){let x=$("#toast");x.textContent=t;x.style.display="block";setTimeout(()=>x.style.display="none",3000)}
+function open(html){$("#content").innerHTML=html;$("#modal").classList.remove("hidden")}
+function closeModal(){$("#modal").classList.add("hidden")}
+let activeFilter="همه";
+function setFilter(kind){activeFilter=kind;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.kind===kind));draw()}
+function draw(){
+ let q=($("#search")?.value||"").trim().toLocaleLowerCase("fa");
+ let list=products.filter(p=>(activeFilter==="همه"||p.kind===activeFilter)&&[p.title,p.desc,p.seller,p.kind].some(v=>String(v).toLocaleLowerCase("fa").includes(q)));
+ let sort=$("#sort")?.value||"new";
+ if(sort==="low")list.sort((a,b)=>a.price-b.price);
+ if(sort==="high")list.sort((a,b)=>b.price-a.price);
+ if(sort==="name")list.sort((a,b)=>a.title.localeCompare(b.title,"fa"));
+ if(sort==="new")list.sort((a,b)=>b.id-a.id);
+ $("#resultCount").textContent=list.length.toLocaleString("fa-IR")+" محصول";
+ $("#products").innerHTML=list.length?list.map(p=>`<article class="card"><span class="tag">${safe(p.kind)}</span><h3>${safe(p.title)}</h3><p>${safe(p.desc)}</p><div class="muted">سازنده: ${safe(p.seller)}</div><div class="bottom"><span class="price">${p.price===0?"رایگان":p.price.toLocaleString("fa-IR")+" تومان"}</span><button onclick="purchase(${p.id})">${p.price===0?"دانلود":"خرید / دانلود"}</button></div></article>`).join(""):`<div class="empty-state"><div class="symbol">◇</div><h3>${q?"محصولی پیدا نشد":"هنوز محصولی ثبت نشده"}</h3><p>${q?"عبارت جست‌وجو را تغییر بده یا فیلتر دیگری انتخاب کن.":"اولین محصول فروشگاه را ثبت کن تا در این بخش نمایش داده شود."}</p><button onclick="sellForm()">ثبت اولین محصول</button></div>`;
+}
+function auth(){open(`<h2>ورود به حساب</h2><div class="auth-tabs"><button type="button" class="auth-tab active" id="loginTab" onclick="authMode('login')">ورود</button><button type="button" class="auth-tab" id="registerTab" onclick="authMode('register')">ساخت حساب</button></div><form id="authform"><div id="usernameField" hidden><label>نام کاربری</label><input name="username" autocomplete="username"></div><label>ایمیل</label><input name="email" type="email" autocomplete="email" required><label>رمز عبور</label><input name="password" type="password" minlength="8" autocomplete="current-password" required><button class="submit" id="authSubmit">ورود</button></form><p class="note">این نسخه پیش‌نمایش است؛ برای حساب واقعی و ذخیره امن اطلاعات، اتصال به سرور لازم است.</p>`);window.authMode('login');$("#authform").onsubmit=e=>{e.preventDefault();const data=new FormData(e.target);user=(data.get("username")||data.get("email").split("@")[0]);$("#account").innerHTML=`<span class="muted">${safe(user)}</span> <button class="ghost" onclick="logout()">خروج</button>`;closeModal();toast("فرم ورود ثبت شد")}}
+function authMode(mode){const reg=mode==="register";$("#usernameField").hidden=!reg;$("#usernameField").querySelector("input").required=reg;$("#authSubmit").textContent=reg?"ساخت حساب":"ورود";$("#loginTab").classList.toggle("active",!reg);$("#registerTab").classList.toggle("active",reg);$("#authform").querySelector('[name="password"]').autocomplete=reg?"new-password":"current-password";document.querySelector("#modal h2").textContent=reg?"ساخت حساب جدید":"ورود به حساب"}
+function logout(){user=null;$("#account").innerHTML='<button class="ghost" onclick="auth()">ورود / ثبت‌نام</button>'}
+function sellForm(){if(!user){toast("برای ادامه، ابتدا وارد حساب شو");auth();return}open(`<h2>ثبت محصول</h2><form id="productform"><label>نام محصول</label><input name="title" required><label>توضیحات</label><textarea name="desc" rows="3" required></textarea><label>نوع محصول</label><select name="kind"><option>Resource Pack</option><option>Plugin</option></select><label>قیمت (تومان)</label><input name="price" type="number" min="0" step=".01" required><label>فایل محصول (در این نسخه فقط انتخاب فایل)</label><input name="file" type="file" accept=".zip,.rar" required><p class="note">در این فایل HTML، فایل فقط انتخاب می‌شود و جایی آپلود یا ذخیره نمی‌شود.</p><button class="submit">نمایش محصول در فروشگاه</button></form>`);$("#productform").onsubmit=e=>{e.preventDefault();let f=new FormData(e.target);products.unshift({id:Date.now(),title:f.get("title"),desc:f.get("desc"),kind:f.get("kind"),price:Number(f.get("price")),seller:user});draw();closeModal();toast("محصول به‌صورت نمایشی اضافه شد")}}
+function purchase(id){let p=products.find(x=>x.id===id);if(p.price===0){toast("دانلود واقعی در نسخه HTML فعال نیست");return}if(!user){auth();return}open(`<h2>خرید ${safe(p.title)}</h2><p>مبلغ نمایشی: <b>${p.price.toLocaleString('fa-IR')} تومان</b></p><p class="note">درگاه پرداخت واقعی به بک‌اند و اتصال سرویس پرداخت نیاز دارد. این صفحه فقط پیش‌نمایش فرایند خرید است.</p><button class="submit" onclick="closeModal();toast('پرداخت در نسخه نمایشی انجام نمی‌شود')">ادامه (نمایشی)</button>`)}
+
+
+function addChatMessage(text,who){
+ const box=$("#chatMessages"), item=document.createElement("div");
+ item.className="bubble "+who; item.textContent=text; box.appendChild(item); box.scrollTop=box.scrollHeight;
+}
+function guideReply(question){
+ const q=question.toLocaleLowerCase("fa");
+ if(q.includes("نسخه")||q.includes("سازگار")||q.includes("ورژن"))
+  return "برای بررسی سازگاری، نسخه دقیق Minecraft و نوع پلتفرمت (Java یا Bedrock) را با اطلاعات صفحه محصول تطبیق بده. اگر پلاگین است، نسخه نرم‌افزار سرور مثل Paper یا Spigot را هم بررسی کن. اگر این موارد در توضیحات مشخص نیست، قبل از خرید از فروشنده سؤال کن.";
+ if(q.includes("نصب")||q.includes("راه‌اندازی"))
+  return "اول فایل راهنما یا README محصول را بخوان. ریسورس‌پک معمولاً از بخش Resource Packs فعال می‌شود؛ پلاگین سرور معمولاً باید با نسخه سازگار در پوشه plugins سرور قرار بگیرد و سرور طبق راهنمای سازنده راه‌اندازی مجدد شود. قبل از هر تغییری از فایل‌های سرور نسخه پشتیبان بگیر.";
+ if(q.includes("پلاگین")||q.includes("سرور"))
+  return "برای پیشنهاد دقیق‌تر، هدفت از پلاگین را مشخص کن: مدیریت سرور، اقتصاد، مینی‌گیم، محافظت یا امکانات ظاهری؟ همچنین نسخه Minecraft و نوع سرورت (مثلاً Paper یا Spigot) را بررسی کن تا محصول ناسازگار نخری.";
+ if(q.includes("ریسورس")||q.includes("تکسچر")||q.includes("ظاهر"))
+  return "برای انتخاب ریسورس‌پک، سبک گرافیکی موردنظرت (واقع‌گرایانه، ساده یا فانتزی)، وضوح تصویر و سازگاری با نسخه Minecraft را بررسی کن. بعضی پک‌ها ممکن است برای اجرا به توان گرافیکی بیشتری نیاز داشته باشند.";
+ if(q.includes("خرید")||q.includes("پرداخت")||q.includes("پول"))
+  return "قبل از خرید، توضیحات کامل، نسخه‌های پشتیبانی‌شده، تصاویر، شرایط به‌روزرسانی و نظرهای موجود را بررسی کن. در این پیش‌نمایش پرداخت واقعی فعال نیست؛ اطلاعات پرداخت را فقط در درگاه رسمی و معتبر وارد کن.";
+ return "حتماً راهنمایی‌ات می‌کنم! 😊 بگو دنبال چه نوع محصولی هستی، نسخه Minecraft تو چنده و Java بازی می‌کنی یا Bedrock؟ با این اطلاعات بهتر می‌تونم راهنمایی‌ات کنم.";
+}
+function sendGuideMessage(value){
+ const msg=String(value||"").trim(); if(!msg)return;
+ addChatMessage(msg,"user");
+ $("#chatInput").value="";
+ setTimeout(()=>addChatMessage(guideReply(msg),"bot"),350);
+}
+function quickAsk(q){sendGuideMessage(q)}
+$("#chatForm").addEventListener("submit",e=>{e.preventDefault();sendGuideMessage($("#chatInput").value)});
+
+draw();
+</script>
+</body></html>
